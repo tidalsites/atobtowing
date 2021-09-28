@@ -6,10 +6,12 @@ export const Home: FC = () => {
   return (
     <div className="Home">
       <section className="Home__hero">
+        <span>Norfolks Primary AAA Provider</span>
         <div className="Home__hero__content">
           <div className="Home__hero__content__type">
             <h1>A to B Towing & Recovery</h1>
-            <h2>Norfolks Primary AAA Provider</h2>
+            <h2>Let us get you back on track</h2>
+            <p>A to B Towing & Recover has been leading the way in Towing services in Norfolk since 2010. </p>
           </div>
           <div className="Home__hero__content__btn-group">
             <button className="btn primary">Call Now</button>
@@ -18,12 +20,6 @@ export const Home: FC = () => {
         </div>
       </section>
       <section className="Home__map">
-        {/* <iframe
-          src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDYAvRSjTHLUINsw1yGj9Mevlo-F4N6GdU&q=Norfolk+VA&zoom=12"
-          frameBorder="0"
-          allowFullScreen
-          loading="lazy"
-        ></iframe> */}
         <Map />
       </section>
       <section className="Home__services"></section>
