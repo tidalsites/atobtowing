@@ -1,0 +1,49 @@
+{
+  "services": [
+    {
+      "name": "Towing & Recovery",
+      "content": {
+        "text": "Vehicle Breakdowns, Accidents, Hauling",
+        "timeframe": "30-45min",
+        "price": "Starting at $80"
+      },
+      "icon": "east"
+    },
+    {
+      "name": "Roadside Assistance",
+      "content": {
+        "text": "Fuel delivery at your breakdown location",
+        "timeframe": "30-45min",
+        "price": "Deliver $5 of gas"
+      },
+      "icon": "west"
+    },
+    {
+      "name": "Vehicle Battery Sales & Install",
+      "content": {
+        "text": "We sell Top Quality Batteries. Delivered & Installed",
+        "timeframe": "1 hr",
+        "price": "Call for Pricing"
+      },
+      "icon": "west"
+    },
+    {
+      "name": "Tire Repair or Install Spare Tire",
+      "content": {
+        "text": "At your breakdown location",
+        "timeframe": "30-45min",
+        "price": "Starting at $15"
+      },
+      "icon": "west"
+    },
+    {
+      "name": "Vehicle Unlock Services",
+      "content": {
+        "text": "Unlock services must have ID",
+        "timeframe": "1hr",
+        "price": "$65"
+      },
+      "icon": "west"
+    }
+  ]
+}
