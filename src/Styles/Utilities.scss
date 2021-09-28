@@ -1,0 +1,36 @@
+@use "./Colors.scss" as c;
+
+$border-size: 2px;
+
+button.btn {
+  border: 0;
+  box-shadow: none;
+  background: c.$white;
+  padding: 0.5rem 1rem;
+  font-size: 1.25rem;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &.primary {
+    background: c.$primary-red;
+    color: c.$white;
+    border: $border-size solid c.$primary-red;
+
+    &:hover {
+      background: c.$white;
+      border: $border-size solid c.$primary-red;
+      color: c.$primary-red;
+    }
+  }
+
+  &.secondary {
+    border: $border-size solid c.$primary-blue;
+    color: c.$primary-blue;
+    background: c.$white;
+
+    &:hover {
+      background: c.$primary-blue;
+      color: c.$white;
+    }
+  }
+}
