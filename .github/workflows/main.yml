@@ -35,7 +35,13 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: "14"
-      - run: npm ci
-      - run: CI= npm run build
-      - run: npm run s3-cleanup
-      - run: npm run deploy
+      - name: Install
+        run: npm ci
+      - name: Build
+        run: CI= npm run build
+        env:
+          REACT_APP_MAP_API_KEY: ${{secrets.REACT_APP_MAP_API_KEY}}
+      - name: S3 Cleanup
+        run: npm run s3-cleanup
+      - name: Deploy
+        run: npm run deploy
