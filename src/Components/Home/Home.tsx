@@ -24,8 +24,12 @@ export const Home: FC = () => {
             </p>
           </div>
           <div className="Home__hero__content__btn-group">
-            <button className="btn primary">Call Now</button>
-            <button className="btn secondary">Get Quote</button>
+            <a href="tel:757-550-0830" className="btn primary">
+              Call Now
+            </a>
+            <a href="mailto:dhaynes916@gmail.com" className="btn secondary">
+              Get Quote
+            </a>
           </div>
         </div>
         <div className="Home__hero__map">

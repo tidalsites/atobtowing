@@ -2,7 +2,12 @@
 
 $border-size: 2px;
 
-button.btn {
+a.btn {
+  text-decoration: none;
+}
+
+button.btn,
+a.btn {
   border: 0;
   box-shadow: none;
   background: c.$white;

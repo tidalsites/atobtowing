@@ -1,0 +1,31 @@
+@use "../../Styles/Colors.scss" as c;
+
+.Partners {
+  width: 100vw;
+
+  &__header {
+    padding: 3rem 0;
+    font-size: 1.5rem;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-around;
+    border-top: 2px solid c.$black;
+    border-bottom: 2px solid c.$black;
+    padding: 1rem 0;
+    background: c.$primary-blue;
+
+    &__partner {
+      border: 2px solid c.$black;
+      border-radius: 50%;
+      aspect-ratio: 1/1;
+      width: 100px;
+      display: grid;
+      place-content: center;
+      background: c.$white;
+    }
+  }
+}
