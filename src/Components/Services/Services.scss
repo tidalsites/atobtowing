@@ -1,46 +1,57 @@
 @use "../../Styles/Colors.scss" as c;
 
+$service-width: 300px;
+$service-gap: 2rem;
+
 .Services {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  flex-grow: 1;
-  color: c.$black;
-  max-width: 90em;
-  margin: 3rem auto;
-  gap: 2rem;
+  &__header {
+    padding: 3rem 0;
+    font-size: 1.5rem;
+    text-align: center;
+    text-transform: uppercase;
+  }
 
-  &__service {
-    width: 300px;
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-grow: 1;
+    color: c.$black;
+    max-width: calc(($service-width * 3) + ($service-gap * 2));
+    margin: 3rem auto;
+    gap: $service-gap;
 
-    &__icon {
-      width: 150px;
-      aspect-ratio: 1/1;
-      margin: 0 auto;
-      border-radius: 50%;
-      border: 2px solid c.$primary-blue;
-      transform: translateY(-1rem);
-      display: grid;
-      place-content: center;
-      z-index: 1;
-    }
+    &__service {
+      width: $service-width;
 
-    &__name {
-      font-size: 1.25rem;
-      font-weight: 700;
-      text-align: center;
-      padding: 1rem 0.5rem;
-      background: c.$primary-blue;
-      color: c.$white;
-    }
+      &__icon {
+        width: calc($service-width / 2);
+        aspect-ratio: 1/1;
+        margin: 0 auto;
+        border-radius: 50%;
+        border: 2px solid c.$primary-blue;
+        display: grid;
+        place-content: center;
+        z-index: 1;
+      }
 
-    &__content {
-      padding: 10px;
-      border: 2px solid c.$primary-blue;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      font-size: 1.125rem;
+      &__name {
+        font-size: 1.25rem;
+        font-weight: 700;
+        text-align: center;
+        padding: 1rem 0.5rem;
+        background: c.$primary-blue;
+        color: c.$white;
+      }
+
+      &__content {
+        padding: 10px;
+        border: 2px solid c.$primary-blue;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        font-size: 1.125rem;
+      }
     }
   }
 }

@@ -19,10 +19,13 @@ export const Services: FC = () => {
   const services: IService[] = ServiceData.services;
   return (
     <section className="Services">
-      {services.map((service) => {
-        const { name, content, icon } = service;
-        return <Service name={name} content={content} icon={icon} />;
-      })}
+      <h3 className="Services__header">Services</h3>
+      <div className="Services__content">
+        {services.map((service) => {
+          const { name, content, icon } = service;
+          return <Service name={name} content={content} icon={icon} />;
+        })}
+      </div>
     </section>
   );
 };

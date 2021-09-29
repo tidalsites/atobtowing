@@ -7,7 +7,9 @@ export const Home: FC = () => {
   return (
     <div className="Home">
       <section className="Home__hero">
-        <span>Norfolks Primary AAA Provider</span>
+        <span className="Home__hero__banner">
+          Norfolks Primary AAA Provider
+        </span>
         <div className="Home__hero__content">
           <div className="Home__hero__content__type">
             <h1>A to B Towing & Recovery</h1>
@@ -24,9 +26,11 @@ export const Home: FC = () => {
             <button className="btn secondary">Get Quote</button>
           </div>
         </div>
-      </section>
-      <section className="Home__map">
-        <Map />
+        <div className="Home__hero__map">
+          <Map />
+          <div className="Home__hero__map__decoration-1"></div>
+          <div className="Home__hero__map__decoration-2"></div>
+        </div>
       </section>
     </div>
   );
