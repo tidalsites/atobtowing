@@ -24,7 +24,7 @@ export const Map: FC = () => {
     }
   }, []);
   return (
-    <LoadScript googleMapsApiKey="AIzaSyDYAvRSjTHLUINsw1yGj9Mevlo-F4N6GdU">
+    <LoadScript googleMapsApiKey={process.env.REACT_APP_MAP_API_KEY || ""}>
       <GoogleMap center={center} zoom={12}>
         {hasGeolocationData && <Marker position={center} />}
       </GoogleMap>

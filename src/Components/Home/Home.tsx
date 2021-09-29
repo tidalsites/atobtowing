@@ -12,7 +12,9 @@ export const Home: FC = () => {
         </span>
         <div className="Home__hero__content">
           <div className="Home__hero__content__type">
-            <h1>A to B Towing & Recovery</h1>
+            <h1>
+              <span>A to B</span> Towing & Recovery
+            </h1>
             <h2>Let us get you back on track</h2>
             <p>
               A to B Towing & Recovery has been leading the way in Towing
