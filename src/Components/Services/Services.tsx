@@ -22,7 +22,7 @@ export const Services: FC = () => {
       <h3 className="Services__header">Services</h3>
       <div className="Services__content">
         {services.map((service) => {
-          const { name, content, icon } = service;
+          let { name, content, icon } = service;
           return <Service name={name} content={content} icon={icon} />;
         })}
       </div>

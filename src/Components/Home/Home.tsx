@@ -20,7 +20,7 @@ export const Home: FC<IHomeProps> = ({ setShowContactForm }) => {
         </span>
         <div className="Home__hero__contactBar">
           <div className="Home__hero__contactBar__hours">
-            <span>Open from 6AM to 12PM</span>
+            <span>Open from 6AM to 12AM</span>
           </div>
           <div className="Home__hero__contactBar__contact">
             <div className="Home__hero__contactBar__contact__item">

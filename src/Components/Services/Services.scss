@@ -4,14 +4,18 @@ $service-width: 300px;
 $service-gap: 3rem;
 
 .Services {
+  background-image: url("../../Assets/services-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 1rem 0;
+
   &__header {
     padding: 3rem 0;
     font-size: 2rem;
     text-align: center;
     text-transform: uppercase;
-
-    // background: c.$primary-red;
-    // color: c.$primary-red;
+    color: c.$white;
   }
 
   &__content {
@@ -38,13 +42,19 @@ $service-gap: 3rem;
         width: calc($service-width / 2);
         aspect-ratio: 1/1;
         margin: 0 auto;
+        margin-bottom: -1rem;
         border-radius: 50%;
-        border: 2px solid c.$primary-red;
-        outline: 2px solid c.$primary-blue;
-        outline-offset: 2px;
+        background: c.$white;
         display: grid;
         place-content: center;
         z-index: 1;
+        outline: 2px solid c.$primary-blue;
+        outline-offset: -5px;
+
+        img {
+          width: 75%;
+          margin: 0 auto;
+        }
       }
 
       &__name {

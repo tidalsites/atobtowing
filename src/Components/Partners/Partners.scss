@@ -1,15 +1,18 @@
 @use "../../Styles/Colors.scss" as c;
 
 .Partners {
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
+  background-image: url("../../Assets/partners-bg.png");
+  background-repeat: no-repeat;
+  background-size: 250% 300%;
+  background-position: top;
+  padding: 1rem 0;
 
   &__header {
-    padding: 3rem 0;
+    padding: 1.5rem 0;
     font-size: 2rem;
     text-align: center;
     text-transform: uppercase;
+    color: c.$white;
   }
 
   &__content {
@@ -19,12 +22,14 @@
     padding: 1rem 0;
 
     &__partner {
-      background: c.$gray;
+      background: c.$white;
       color: c.$black;
       aspect-ratio: 1/1;
-      width: 70px;
+      width: 100px;
       display: grid;
       place-content: center;
+      box-shadow: 2px 2px 5px c.$black;
+      border-radius: 50% 25% / 50% 25%;
     }
   }
 }

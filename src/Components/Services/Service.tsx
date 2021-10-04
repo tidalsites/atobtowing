@@ -1,4 +1,5 @@
 import { FC } from "react";
+import tow from "../../Assets/tow-icon.png";
 
 interface IServiceContent {
   text: string;
@@ -17,7 +18,7 @@ export const Service: FC<IService> = ({ name, content, icon }) => {
   return (
     <div className="Services__content__service Service">
       <div className="Services__content__service__icon">
-        <span className="material-icons">{icon}</span>
+        <img src={tow} alt="" />
       </div>
       <div className="Services__content__service__name">{name}</div>
       <div className="Services__content__service__content">
