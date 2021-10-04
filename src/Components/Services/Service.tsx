@@ -1,5 +1,6 @@
 import { FC } from "react";
 import tow from "../../Assets/tow-icon.png";
+import tire from "../../Assets/tire-icon.png";
 
 interface IServiceContent {
   text: string;
@@ -14,11 +15,20 @@ interface IService {
 }
 
 export const Service: FC<IService> = ({ name, content, icon }) => {
+  let IconComponent = () => <img src={tow} alt="Tow truck" />;
+  switch (icon) {
+    case "tire":
+      IconComponent = () => <img src={tire} alt="Flat tire" />;
+      break;
+    default:
+      break;
+  }
   const { text, timeframe, price } = content;
   return (
     <div className="Services__content__service Service">
       <div className="Services__content__service__icon">
-        <img src={tow} alt="" />
+        {/* <img src={tow} alt="Tow truck" /> */}
+        <IconComponent />
       </div>
       <div className="Services__content__service__name">{name}</div>
       <div className="Services__content__service__content">
@@ -32,4 +42,8 @@ export const Service: FC<IService> = ({ name, content, icon }) => {
       </div>
     </div>
   );
+};
+
+const TowIcon: FC = () => {
+  return <img src={tow} alt="Tow Truck" />;
 };
