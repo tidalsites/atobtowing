@@ -18,6 +18,29 @@ export const Home: FC<IHomeProps> = ({ setShowContactForm }) => {
         <span className="Home__hero__banner">
           Norfolks Primary AAA Provider
         </span>
+        <div className="Home__hero__contactBar">
+          <div className="Home__hero__contactBar__hours">
+            <span>Open from 6AM to 12PM</span>
+          </div>
+          <div className="Home__hero__contactBar__contact">
+            <div className="Home__hero__contactBar__contact__item">
+              <i className="fas fa-phone"></i>
+              <span>(757) 123-4567</span>
+            </div>
+            <div className="Home__hero__contactBar__contact__item">
+              <i className="fas fa-envelope"></i>
+              <span>scott@atobtowing.com</span>
+            </div>
+            <div className="Home__hero__contactBar__contact__item">
+              <i className="fab fa-facebook"></i>
+              <span>Facebook</span>
+            </div>
+            <div className="Home__hero__contactBar__contact__item">
+              <i className="fab fa-instagram-square"></i>
+              <span>Instagram</span>
+            </div>
+          </div>
+        </div>
         <div className="Home__hero__content">
           <div className="Home__hero__content__type">
             <h1>

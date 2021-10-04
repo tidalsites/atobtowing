@@ -24,14 +24,14 @@ $min-width: 1000px;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 25% 50%;
-    min-height: calc(100vh - 50px + $map-height);
+    min-height: calc(100vh + $map-height);
     display: flex;
     flex-direction: column;
     flex-grow: 1;
     width: 100%;
 
     @media (min-width: $min-width) {
-      min-height: calc(100vh - 50px);
+      min-height: 100vh;
     }
 
     &__banner {
@@ -44,6 +44,52 @@ $min-width: 1000px;
       box-shadow: 0 3px 6px c.$black;
       border-bottom: 1px solid c.$black;
       text-transform: uppercase;
+    }
+
+    &__contactBar {
+      display: flex;
+      flex-wrap: wrap-reverse;
+      align-items: center;
+      background: c.$white;
+      padding: 0.5rem 10px;
+
+      &__hours {
+        font-size: 0.85rem;
+        color: c.$black;
+        flex-grow: 1;
+      }
+
+      &__contact {
+        display: flex;
+        justify-content: center;
+        gap: 0.75rem;
+        // flex-grow: 1;
+
+        &__item {
+          display: flex;
+          align-items: center;
+          gap: 0.25rem;
+          cursor: pointer;
+          color: c.$primary-blue;
+          transition: all 0.2s ease-in-out;
+          font-size: 1.125rem;
+
+          &:hover {
+            background: c.$white;
+            padding: 0.25rem 10px;
+            border-radius: 200px;
+            border: 1px solid c.$primary-blue;
+
+            > span {
+              display: block;
+            }
+          }
+
+          > span {
+            display: none;
+          }
+        }
+      }
     }
 
     &__content {
@@ -66,6 +112,7 @@ $min-width: 1000px;
           font-size: 2.5rem;
           line-height: 1;
           padding: 2rem 0;
+          padding-top: 0;
           padding-bottom: 1rem;
 
           span {
