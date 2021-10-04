@@ -5,22 +5,46 @@
   background: c.$black;
   color: c.$white;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
   padding: 0 10px;
+  padding-bottom: 5px;
   position: sticky;
   bottom: 0;
   z-index: 5;
+  font-size: 1.1rem;
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    &__item {
+      display: flex;
+      gap: 0.5rem;
+
+      span {
+        display: none;
+
+        @media (min-width: 500px) {
+          display: block;
+        }
+      }
+    }
+  }
 
   &__smedia {
     display: flex;
     justify-content: space-around;
     gap: 0.5rem;
-    // max-width: 120px;
     min-width: 120px;
     padding: 10px clamp(10px, 5vw, 20px);
-    border-left: 2px solid c.$white;
+    // border-left: 2px solid c.$white;
 
     i {
       color: c.$white;

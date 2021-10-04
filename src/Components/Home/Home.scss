@@ -24,11 +24,15 @@ $min-width: 1000px;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 25% 50%;
-    min-height: calc(100vh - 50px);
+    min-height: calc(100vh - 50px + $map-height);
     display: flex;
     flex-direction: column;
     flex-grow: 1;
     width: 100%;
+
+    @media (min-width: $min-width) {
+      min-height: calc(100vh - 50px);
+    }
 
     &__banner {
       background: c.$primary-red;
@@ -100,7 +104,6 @@ $min-width: 1000px;
       width: 100%;
       color: c.$primary-blue;
       position: relative;
-      margin-top: calc(50% - 50px);
 
       // This is the google maps styling
       > div:nth-child(2) {

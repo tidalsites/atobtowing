@@ -1,9 +1,17 @@
-import { FC } from "react";
+import { FC, Dispatch, SetStateAction } from "react";
 import "./Home.scss";
 import { Map } from "./Map";
-import { Services } from "../Services/Services";
 
-export const Home: FC = () => {
+interface IHomeProps {
+  setShowContactForm: Dispatch<SetStateAction<boolean>>;
+}
+
+export const Home: FC<IHomeProps> = ({ setShowContactForm }) => {
+  const openModal = () => {
+    setShowContactForm(true);
+    document.body.classList.add("modal-open");
+  };
+
   return (
     <div className="Home">
       <section className="Home__hero">
@@ -27,9 +35,9 @@ export const Home: FC = () => {
             <a href="tel:757-550-0830" className="btn primary">
               Call Now
             </a>
-            <a href="mailto:dhaynes916@gmail.com" className="btn secondary">
+            <button onClick={openModal} className="btn secondary">
               Get Quote
-            </a>
+            </button>
           </div>
         </div>
         <div className="Home__hero__map">

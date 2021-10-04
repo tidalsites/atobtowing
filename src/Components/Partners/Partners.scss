@@ -2,30 +2,29 @@
 
 .Partners {
   width: 100vw;
+  display: flex;
+  flex-direction: column;
 
   &__header {
     padding: 3rem 0;
-    font-size: 1.5rem;
+    font-size: 2rem;
     text-align: center;
     text-transform: uppercase;
   }
 
   &__content {
     display: flex;
-    justify-content: space-around;
-    border-top: 2px solid c.$black;
-    border-bottom: 2px solid c.$black;
+    justify-content: center;
+    gap: 0.5rem;
     padding: 1rem 0;
-    background: c.$primary-blue;
 
     &__partner {
-      border: 2px solid c.$black;
-      border-radius: 50%;
+      background: c.$gray;
+      color: c.$black;
       aspect-ratio: 1/1;
-      width: 100px;
+      width: 70px;
       display: grid;
       place-content: center;
-      background: c.$white;
     }
   }
 }

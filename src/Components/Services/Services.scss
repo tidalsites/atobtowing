@@ -6,9 +6,12 @@ $service-gap: 3rem;
 .Services {
   &__header {
     padding: 3rem 0;
-    font-size: 1.5rem;
+    font-size: 2rem;
     text-align: center;
     text-transform: uppercase;
+
+    // background: c.$primary-red;
+    // color: c.$primary-red;
   }
 
   &__content {
@@ -21,6 +24,10 @@ $service-gap: 3rem;
     margin: 3rem auto;
     gap: $service-gap;
 
+    @media (min-width: 997px) {
+      justify-content: flex-start;
+    }
+
     &__service {
       width: $service-width;
       min-height: 30em;
@@ -32,7 +39,9 @@ $service-gap: 3rem;
         aspect-ratio: 1/1;
         margin: 0 auto;
         border-radius: 50%;
-        border: 2px solid c.$primary-blue;
+        border: 2px solid c.$primary-red;
+        outline: 2px solid c.$primary-blue;
+        outline-offset: 2px;
         display: grid;
         place-content: center;
         z-index: 1;
@@ -45,7 +54,7 @@ $service-gap: 3rem;
         padding: 1rem 0.5rem;
         background: c.$primary-blue;
         color: c.$white;
-        margin-top: 0.75rem;
+        margin-top: 0.25rem;
       }
 
       &__content {
@@ -57,6 +66,7 @@ $service-gap: 3rem;
         font-size: 1.125rem;
         flex-grow: 1;
         justify-content: center;
+        background: c.$white;
 
         &__text {
           flex-grow: 1;
