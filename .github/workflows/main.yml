@@ -41,6 +41,9 @@ jobs:
         run: CI= npm run build
         env:
           REACT_APP_MAP_API_KEY: ${{secrets.REACT_APP_MAP_API_KEY}}
+          REACT_APP_SERVICE_ID: ${{secrets.REACT_APP_SERVICE_ID}}
+          REACT_APP_TEMPLATE_ID: ${{secrets.REACT_APP_TEMPLATE_ID}}
+          REACT_APP_USER_ID: ${{secrets.REACT_APP_USER_ID}}
       - name: S3 Cleanup
         run: npm run s3-cleanup
       - name: Deploy
