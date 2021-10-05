@@ -16,7 +16,7 @@
         "timeframe": "30-45min",
         "price": "Deliver $5 of gas"
       },
-      "icon": "icon"
+      "icon": "gas"
     },
     {
       "name": "Vehicle Battery Sales & Install",
@@ -25,7 +25,7 @@
         "timeframe": "1 hr",
         "price": "Call for Pricing"
       },
-      "icon": "icon"
+      "icon": "battery"
     },
     {
       "name": "Tire Repair or Install Spare Tire",
@@ -43,7 +43,7 @@
         "timeframe": "1hr",
         "price": "$65"
       },
-      "icon": "icon"
+      "icon": "unlock"
     }
   ]
 }
