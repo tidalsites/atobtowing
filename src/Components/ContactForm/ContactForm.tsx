@@ -1,4 +1,4 @@
-import React, {
+import {
   FC,
   Dispatch,
   SetStateAction,
@@ -6,7 +6,6 @@ import React, {
   BaseSyntheticEvent,
 } from "react";
 import "./ContactForm.scss";
-import emailjs from "emailjs-com";
 
 interface IContactFormProps {
   visible: boolean;
@@ -23,13 +22,6 @@ export const ContactForm: FC<IContactFormProps> = ({ visible, toggle }) => {
   const defaultLocationUrl =
     "https://www.google.com/maps/search/?api=1&query=36.8508,-76.2859";
 
-  const { REACT_APP_SERVICE_ID, REACT_APP_TEMPLATE_ID, REACT_APP_USER_ID } =
-    process.env;
-
-  const SERVICE_ID = REACT_APP_SERVICE_ID ? REACT_APP_SERVICE_ID : "";
-  const TEMPLATE_ID = REACT_APP_TEMPLATE_ID ? REACT_APP_TEMPLATE_ID : "";
-  const USER_ID = REACT_APP_USER_ID ? REACT_APP_USER_ID : "";
-
   const closeModal = () => {
     toggle(false);
     document.body.classList.remove("modal-open");
@@ -39,21 +31,32 @@ export const ContactForm: FC<IContactFormProps> = ({ visible, toggle }) => {
     e.preventDefault();
 
     const templateParams = {
-      first_name: firstName,
-      last_name: lastName,
+      firstName,
+      lastName,
       email,
-      phone_number: phone,
+      phone,
       category,
       description,
       location: defaultLocationUrl,
     };
 
-    emailjs
-      .send(SERVICE_ID, TEMPLATE_ID, templateParams, USER_ID)
+    const url =
+      "https://42clkctcsg.execute-api.us-east-1.amazonaws.com/default/sendContactFormEmail";
+
+    fetch(url, {
+      method: "POST",
+      body: JSON.stringify(templateParams),
+    })
       .then((response) => {
-        console.log(response);
+        if (!response.ok) throw new Error("Error in fetch");
+        return response.json();
       })
-      .catch((e) => console.log(e));
+      .then((response) => {
+        console.log("Fetch Success!");
+      })
+      .catch((e) => {
+        console.log(e);
+      });
   };
   return (
     <div className={`ContactForm ${visible ? "ContactForm-show" : ""}`}>

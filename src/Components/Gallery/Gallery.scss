@@ -1,0 +1,55 @@
+@use "../../Styles/Colors.scss" as c;
+
+$gallery-item-width: 300px;
+$gallery-breakpoint: calc(($gallery-item-width * 2) + 1rem);
+$gallery-max-width: 60em;
+
+.Gallery {
+  background-image: url("../../Assets/partners-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 1rem 0;
+
+  &__header {
+    padding: 1.5rem 0;
+    font-size: 2rem;
+    text-align: center;
+    text-transform: uppercase;
+    color: c.$white;
+  }
+
+  &__content {
+    display: grid;
+    gap: 1rem;
+    place-content: center;
+    width: 100%;
+    margin: 2rem auto;
+    max-width: $gallery-max-width;
+
+    @media (min-width: 584px) {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+    }
+
+    @media (min-width: 868px) {
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+    }
+  }
+}
+
+.GalleryItem {
+  aspect-ratio: 1/1;
+  width: 300px;
+  background: c.$black;
+  margin: 0 auto;
+  border-radius: 5px;
+
+  img {
+    aspect-ratio: 1/1;
+    width: 90%;
+    display: grid;
+    place-content: center;
+  }
+}
