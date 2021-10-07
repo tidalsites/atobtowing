@@ -25,11 +25,17 @@ export const ContactForm: FC<IContactFormProps> = ({ visible, toggle }) => {
   const [messageSending, setMessageSending] = useState<boolean>(false);
   let defaultLocationUrl: string;
 
-  let locationData = JSON.parse(
-    localStorage.getItem("atob-location-information") || ""
-  );
+  let locationData: { lat: number; lng: number } | null;
 
-  if (locationData === "") {
+  try {
+    locationData = JSON.parse(
+      localStorage.getItem("atob-location-information") || ""
+    );
+  } catch (e) {
+    locationData = null;
+  }
+
+  if (!locationData) {
     defaultLocationUrl = "No location information";
   } else {
     defaultLocationUrl = `https://www.google.com/maps/search/?api=1&query=${
