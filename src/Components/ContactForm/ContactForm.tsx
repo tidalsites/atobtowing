@@ -4,6 +4,7 @@ import {
   SetStateAction,
   useState,
   BaseSyntheticEvent,
+  useEffect,
 } from "react";
 import "./ContactForm.scss";
 
@@ -19,8 +20,22 @@ export const ContactForm: FC<IContactFormProps> = ({ visible, toggle }) => {
   const [phone, setPhone] = useState<string>("");
   const [category, setCategory] = useState<string>("tow");
   const [description, setDescription] = useState<string>("");
-  const defaultLocationUrl =
-    "https://www.google.com/maps/search/?api=1&query=36.8508,-76.2859";
+  const [successMessage, setSuccessMessage] = useState<string | null>(null);
+  const [failureMessage, setFailureMessage] = useState<string | null>(null);
+  const [messageSending, setMessageSending] = useState<boolean>(false);
+  let defaultLocationUrl: string;
+
+  let locationData = JSON.parse(
+    localStorage.getItem("atob-location-information") || ""
+  );
+
+  if (locationData === "") {
+    defaultLocationUrl = "No location information";
+  } else {
+    defaultLocationUrl = `https://www.google.com/maps/search/?api=1&query=${
+      locationData!.lat
+    },${locationData!.lng}`;
+  }
 
   const closeModal = () => {
     toggle(false);
@@ -29,6 +44,7 @@ export const ContactForm: FC<IContactFormProps> = ({ visible, toggle }) => {
 
   const handleSubmit = (e: BaseSyntheticEvent) => {
     e.preventDefault();
+    setMessageSending(true);
 
     const templateParams = {
       firstName,
@@ -52,9 +68,16 @@ export const ContactForm: FC<IContactFormProps> = ({ visible, toggle }) => {
         return response.json();
       })
       .then((response) => {
-        console.log("Fetch Success!");
+        setMessageSending(false);
+        setSuccessMessage(
+          "Message sent. We will process your request as soon as we can."
+        );
       })
       .catch((e) => {
+        setMessageSending(false);
+        setFailureMessage(
+          "We are sorry. Something has gone wrong and we were unable to send your request. Please try again or contact us via phone."
+        );
         console.log(e);
       });
   };
@@ -70,72 +93,91 @@ export const ContactForm: FC<IContactFormProps> = ({ visible, toggle }) => {
             X
           </button>
         </div>
-        <form className="ContactForm__wrapper__form" onSubmit={handleSubmit}>
-          <div className="ContactForm__wrapper__form__group">
-            <label htmlFor="firstName">First Name</label>
-            <input
-              onChange={(e) => setFirstName(e.target.value)}
-              name="firstName"
-              type="text"
-              id="firstName"
-            />
-            <span className="form-error"></span>
+        {messageSending ? (
+          <div className="ContactForm__loading">
+            <span>Sending Request</span>
+            <i className="fas fa-spinner fa-spin"></i>
           </div>
-          <div className="ContactForm__wrapper__form__group">
-            <label htmlFor="lastName">Last Name</label>
-            <input
-              onChange={(e) => setLastName(e.target.value)}
-              name="lastName"
-              type="text"
-            />
-            <span className="form-error"></span>
-          </div>
-          <div className="ContactForm__wrapper__form__group">
-            <label htmlFor="email">Email</label>
-            <input
-              onChange={(e) => setEmail(e.target.value)}
-              name="email"
-              type="email"
-            />
-            <span className="form-error"></span>
-          </div>
-          <div className="ContactForm__wrapper__form__group">
-            <label htmlFor="phone">Phone</label>
-            <input
-              onChange={(e) => setPhone(e.target.value)}
-              name="phone"
-              type="text"
-            />
-            <span className="form-error"></span>
-          </div>
-          <div className="ContactForm__wrapper__form__group">
-            <label htmlFor="category">Issue Category</label>
-            <select
-              onChange={(e) => setCategory(e.target.value)}
-              name="category"
-            >
-              <option value="tow">Towing & Recovery</option>
-              <option value="roadside">Roadside Assistance</option>
-              <option value="battery">Battery</option>
-              <option value="tire">Tire</option>
-              <option value="unlock">Vehicle Unlock</option>
-              <option value="other">Other</option>
-            </select>
-            <span className="form-error"></span>
-          </div>
-          <div className="ContactForm__wrapper__form__group">
-            <label htmlFor="description">Description of problem</label>
-            <textarea
-              onChange={(e) => setDescription(e.target.value)}
-              name="description"
-              cols={30}
-              rows={10}
-            ></textarea>
-            <span className="form-error"></span>
-          </div>
-          <button type="submit">Send</button>
-        </form>
+        ) : (
+          <form className="ContactForm__wrapper__form" onSubmit={handleSubmit}>
+            <div className="ContactForm__wrapper__form__group">
+              <label htmlFor="firstName">First Name</label>
+              <input
+                onChange={(e) => setFirstName(e.target.value)}
+                name="firstName"
+                type="text"
+                id="firstName"
+              />
+              <span className="form-error"></span>
+            </div>
+            <div className="ContactForm__wrapper__form__group">
+              <label htmlFor="lastName">Last Name</label>
+              <input
+                onChange={(e) => setLastName(e.target.value)}
+                name="lastName"
+                type="text"
+              />
+              <span className="form-error"></span>
+            </div>
+            <div className="ContactForm__wrapper__form__group">
+              <label htmlFor="email">Email</label>
+              <input
+                onChange={(e) => setEmail(e.target.value)}
+                name="email"
+                type="email"
+              />
+              <span className="form-error"></span>
+            </div>
+            <div className="ContactForm__wrapper__form__group">
+              <label htmlFor="phone">Phone</label>
+              <input
+                onChange={(e) => setPhone(e.target.value)}
+                name="phone"
+                type="text"
+              />
+              <span className="form-error"></span>
+            </div>
+            <div className="ContactForm__wrapper__form__group">
+              <label htmlFor="category">Issue Category</label>
+              <select
+                onChange={(e) => setCategory(e.target.value)}
+                name="category"
+              >
+                <option value="tow">Towing & Recovery</option>
+                <option value="roadside">Roadside Assistance</option>
+                <option value="battery">Battery</option>
+                <option value="tire">Tire</option>
+                <option value="unlock">Vehicle Unlock</option>
+                <option value="other">Other</option>
+              </select>
+              <span className="form-error"></span>
+            </div>
+            <div className="ContactForm__wrapper__form__group">
+              <label htmlFor="description">Description of problem</label>
+              <textarea
+                onChange={(e) => setDescription(e.target.value)}
+                name="description"
+                cols={30}
+                rows={10}
+              ></textarea>
+              <span className="form-error"></span>
+            </div>
+            <button type="submit">Send</button>
+          </form>
+        )}
       </div>
+      {successMessage && (
+        <div className="status-message status-message-success">
+          <button onClick={() => setSuccessMessage(null)}>X</button>
+          <span>{successMessage}</span>
+        </div>
+      )}
+      {failureMessage && (
+        <div className="status-message status-message-fail">
+          <button onClick={() => setFailureMessage(null)}>X</button>
+          <span>{failureMessage}</span>
+        </div>
+      )}
     </div>
   );
 };
