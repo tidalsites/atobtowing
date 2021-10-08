@@ -1,9 +1,5 @@
-import { FC, useState, useEffect } from "react";
-import axios from "axios";
+import { FC } from "react";
 import "./Gallery.scss";
-
-let url =
-  'https://www.instagram.com/graphql/query/?query_hash=42323d64886122307be10013ad2dcc44&variables={"id":316551611,"first":6}';
 
 export const Gallery: FC = () => {
   return (

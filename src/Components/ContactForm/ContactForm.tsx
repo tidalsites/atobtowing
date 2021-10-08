@@ -4,7 +4,6 @@ import {
   SetStateAction,
   useState,
   BaseSyntheticEvent,
-  useEffect,
 } from "react";
 import "./ContactForm.scss";
 
