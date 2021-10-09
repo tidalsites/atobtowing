@@ -1,6 +1,7 @@
 import { FC, Dispatch, SetStateAction } from "react";
 import "./Home.scss";
 import { Map } from "./Map";
+import logo from "../../Assets/logo.jpeg";
 
 interface IHomeProps {
   setShowContactForm: Dispatch<SetStateAction<boolean>>;
@@ -23,29 +24,42 @@ export const Home: FC<IHomeProps> = ({ setShowContactForm }) => {
             <span>Open from 6AM to 12AM</span>
           </div>
           <div className="Home__hero__contactBar__contact">
-            <div className="Home__hero__contactBar__contact__item">
+            <a
+              href="tel:757-123-4567"
+              className="Home__hero__contactBar__contact__item"
+            >
               <i className="fas fa-phone"></i>
               <span>(757) 123-4567</span>
-            </div>
-            <div className="Home__hero__contactBar__contact__item">
+            </a>
+            <a
+              href="mailto:tidalsitestest@gmail.com"
+              className="Home__hero__contactBar__contact__item"
+            >
               <i className="fas fa-envelope"></i>
               <span>scott@atobtowing.com</span>
-            </div>
-            <div className="Home__hero__contactBar__contact__item">
+            </a>
+            <a
+              href="https://www.facebook.com/atobroadsideassistance/"
+              className="Home__hero__contactBar__contact__item"
+            >
               <i className="fab fa-facebook"></i>
               <span>Facebook</span>
-            </div>
-            <div className="Home__hero__contactBar__contact__item">
+            </a>
+            <a
+              href="https://www.instagram.com/"
+              className="Home__hero__contactBar__contact__item"
+            >
               <i className="fab fa-instagram-square"></i>
               <span>Instagram</span>
-            </div>
+            </a>
           </div>
         </div>
         <div className="Home__hero__content">
           <div className="Home__hero__content__type">
-            <h1>
+            {/* <h1>
               <span>A to B</span> Towing & Recovery
-            </h1>
+            </h1> */}
+            <img src={logo} alt="AtoB Roadside Assistance" />
             <h2>Let us get you back on track</h2>
             <p>
               A to B Towing & Recovery has been leading the way in Towing
