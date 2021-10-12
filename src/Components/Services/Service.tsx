@@ -18,6 +18,7 @@ interface IServiceProps {
   icon: string;
   setShowContactForm: Dispatch<SetStateAction<boolean>>;
   setCategoryValue: Dispatch<SetStateAction<string>>;
+  key: string;
 }
 
 export const Service: FC<IServiceProps> = ({

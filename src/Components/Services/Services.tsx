@@ -30,7 +30,7 @@ export const Services: FC<IServicesProps> = ({
     <section className="Services">
       <h3 className="Services__header">Services</h3>
       <div className="Services__content">
-        {services.map((service) => {
+        {services.map((service, index) => {
           let { name, short_name, content, icon } = service;
           return (
             <Service
@@ -40,6 +40,7 @@ export const Services: FC<IServicesProps> = ({
               icon={icon}
               setShowContactForm={setShowContactForm}
               setCategoryValue={setCategoryValue}
+              key={`service_${index}`}
             />
           );
         })}
