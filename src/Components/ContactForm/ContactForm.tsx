@@ -10,14 +10,21 @@ import "./ContactForm.scss";
 interface IContactFormProps {
   visible: boolean;
   toggle: Dispatch<SetStateAction<boolean>>;
+  categoryValue: string;
+  setCategoryValue: Dispatch<SetStateAction<string>>;
 }
 
-export const ContactForm: FC<IContactFormProps> = ({ visible, toggle }) => {
+export const ContactForm: FC<IContactFormProps> = ({
+  visible,
+  toggle,
+  categoryValue,
+  setCategoryValue,
+}) => {
   const [firstName, setFirstName] = useState<string>("");
   const [lastName, setLastName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [phone, setPhone] = useState<string>("");
-  const [category, setCategory] = useState<string>("tow");
+  const [category, setCategory] = useState<string>(categoryValue || "tow");
   const [description, setDescription] = useState<string>("");
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
   const [failureMessage, setFailureMessage] = useState<string | null>(null);
@@ -43,6 +50,7 @@ export const ContactForm: FC<IContactFormProps> = ({ visible, toggle }) => {
   }
 
   const closeModal = () => {
+    setCategoryValue("tow");
     toggle(false);
     document.body.classList.remove("modal-open");
   };
@@ -83,7 +91,6 @@ export const ContactForm: FC<IContactFormProps> = ({ visible, toggle }) => {
         setFailureMessage(
           "We are sorry. Something has gone wrong and we were unable to send your request. Please try again or contact us via phone."
         );
-        console.log(e);
       });
   };
   return (
@@ -147,6 +154,7 @@ export const ContactForm: FC<IContactFormProps> = ({ visible, toggle }) => {
               <select
                 onChange={(e) => setCategory(e.target.value)}
                 name="category"
+                value={categoryValue}
               >
                 <option value="tow">Towing & Recovery</option>
                 <option value="roadside">Roadside Assistance</option>

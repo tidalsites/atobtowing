@@ -2,6 +2,7 @@
   "services": [
     {
       "name": "Towing & Recovery",
+      "short_name": "Towing",
       "content": {
         "text": "Vehicle Breakdowns, Accidents, Hauling",
         "timeframe": "30-45min",
@@ -11,15 +12,17 @@
     },
     {
       "name": "Roadside Assistance",
+      "short_name": "Roadside",
       "content": {
         "text": "Fuel delivery at your breakdown location",
         "timeframe": "30-45min",
         "price": "Deliver $5 of gas"
       },
-      "icon": "gas"
+      "icon": "roadside"
     },
     {
       "name": "Vehicle Battery Sales & Install",
+      "short_name": "Battery",
       "content": {
         "text": "We sell Top Quality Batteries. Delivered & Installed",
         "timeframe": "1 hr",
@@ -29,6 +32,7 @@
     },
     {
       "name": "Tire Repair or Install Spare Tire",
+      "short_name": "Tire",
       "content": {
         "text": "At your breakdown location",
         "timeframe": "30-45min",
@@ -38,6 +42,7 @@
     },
     {
       "name": "Vehicle Unlock Services",
+      "short_name": "Unlock",
       "content": {
         "text": "Unlock services must have ID",
         "timeframe": "1hr",

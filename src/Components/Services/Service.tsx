@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, Dispatch, SetStateAction } from "react";
 import tow from "../../Assets/tow-icon.png";
 import tire from "../../Assets/tire-icon.png";
 import battery from "../../Assets/battery-icon.png";
@@ -11,13 +11,23 @@ interface IServiceContent {
   price: string;
 }
 
-interface IService {
+interface IServiceProps {
   name: string;
+  short_name: string;
   content: IServiceContent;
   icon: string;
+  setShowContactForm: Dispatch<SetStateAction<boolean>>;
+  setCategoryValue: Dispatch<SetStateAction<string>>;
 }
 
-export const Service: FC<IService> = ({ name, content, icon }) => {
+export const Service: FC<IServiceProps> = ({
+  name,
+  short_name,
+  content,
+  icon,
+  setShowContactForm,
+  setCategoryValue,
+}) => {
   let IconComponent: FC = TowIcon;
   switch (icon) {
     case "tire":
@@ -26,7 +36,7 @@ export const Service: FC<IService> = ({ name, content, icon }) => {
     case "battery":
       IconComponent = BatteryIcon;
       break;
-    case "gas":
+    case "roadside":
       IconComponent = GasIcon;
       break;
     case "unlock":
@@ -50,6 +60,14 @@ export const Service: FC<IService> = ({ name, content, icon }) => {
         <p className="Services__content__service__content__price">
           Price: {price}
         </p>
+        <button
+          onClick={() => {
+            setCategoryValue(icon);
+            setShowContactForm(true);
+          }}
+        >
+          Request {short_name} Service
+        </button>
       </div>
     </div>
   );

@@ -8,8 +8,11 @@ $gallery-max-width: 60em;
   background-image: url("../../Assets/partners-bg.png");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: right;
   padding: 1rem 0;
+  min-height: 1000px;
+  display: flex;
+  flex-direction: column;
 
   &__header {
     padding: 1.5rem 0;
@@ -26,6 +29,7 @@ $gallery-max-width: 60em;
     width: 100%;
     margin: 2rem auto;
     max-width: $gallery-max-width;
+    flex-grow: 1;
 
     @media (min-width: 584px) {
       grid-template-columns: 1fr 1fr;
@@ -45,6 +49,8 @@ $gallery-max-width: 60em;
   background: c.$black;
   margin: 0 auto;
   border-radius: 5px;
+  display: flex;
+  align-self: center;
 
   img {
     aspect-ratio: 1/1;

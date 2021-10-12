@@ -56,9 +56,6 @@ export const Home: FC<IHomeProps> = ({ setShowContactForm }) => {
         </div>
         <div className="Home__hero__content">
           <div className="Home__hero__content__type">
-            {/* <h1>
-              <span>A to B</span> Towing & Recovery
-            </h1> */}
             <img src={logo} alt="AtoB Roadside Assistance" />
             <h2>Let us get you back on track</h2>
             <p>

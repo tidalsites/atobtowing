@@ -9,13 +9,22 @@ import { Footer } from "../Footer/Footer";
 
 export const App: FC = () => {
   const [showContactForm, setShowContactForm] = useState<boolean>(false);
+  const [categoryValue, setCategoryValue] = useState<string>("tow");
   return (
     <div className="App">
       <Home setShowContactForm={setShowContactForm} />
-      <Services />
+      <Services
+        setShowContactForm={setShowContactForm}
+        setCategoryValue={setCategoryValue}
+      />
       <Gallery />
       <Partners />
-      <ContactForm visible={showContactForm} toggle={setShowContactForm} />
+      <ContactForm
+        visible={showContactForm}
+        toggle={setShowContactForm}
+        categoryValue={categoryValue ? categoryValue : "tow"}
+        setCategoryValue={setCategoryValue}
+      />
       <Footer />
     </div>
   );
