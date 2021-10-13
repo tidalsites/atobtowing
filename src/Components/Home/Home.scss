@@ -176,6 +176,10 @@ $min-width: 1000px;
         place-content: center;
         background: c.$white;
         z-index: 3;
+        background: url("../../Assets/default-map.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
 
         button {
           display: flex;
