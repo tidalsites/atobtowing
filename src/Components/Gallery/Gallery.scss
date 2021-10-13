@@ -41,6 +41,43 @@ $gallery-max-width: 60em;
       grid-template-rows: 1fr 1fr;
     }
   }
+
+  &__smedia {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: c.$primary-red;
+    color: c.$white;
+    padding: 1rem 0;
+
+    h4 {
+      font-size: 1.3rem;
+    }
+
+    &__content {
+      display: flex;
+      gap: 1rem;
+      padding: 1rem 0;
+
+      a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+        color: c.$primary-blue;
+        background: c.$white;
+        border: 1px solid c.$white;
+        border-radius: 5px;
+        padding: 0.5rem 1rem;
+        font-size: 1.25rem;
+
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
 }
 
 .GalleryItem {

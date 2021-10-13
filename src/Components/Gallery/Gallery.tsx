@@ -15,6 +15,19 @@ export const Gallery: FC = () => {
         <GalleryItem img="test" alt="test" />
         <GalleryItem img="test" alt="test" />
       </div>
+      <div className="Gallery__smedia">
+        <h4>Check us out on Social Media</h4>
+        <div className="Gallery__smedia__content">
+          <a href="https://www.facebook.com/atobroadsideassistance/">
+            <i className="fab fa-facebook"></i>
+            <span>Facebook</span>
+          </a>
+          <a href="https://www.instagram.com/">
+            <i className="fab fa-instagram"></i>
+            <span>Instagram</span>
+          </a>
+        </div>
+      </div>
     </div>
   );
 };

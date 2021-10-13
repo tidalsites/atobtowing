@@ -55,7 +55,7 @@ export const Home: FC<IHomeProps> = ({
               href="https://www.instagram.com/"
               className="Home__hero__contactBar__contact__item"
             >
-              <i className="fab fa-instagram-square"></i>
+              <i className="fab fa-instagram"></i>
               <span>Instagram</span>
             </a>
           </div>
