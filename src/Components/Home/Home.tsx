@@ -5,9 +5,15 @@ import logo from "../../Assets/logo.jpeg";
 
 interface IHomeProps {
   setShowContactForm: Dispatch<SetStateAction<boolean>>;
+  geolocationAllowed: boolean;
+  setGeolocationAllowed: Dispatch<SetStateAction<boolean>>;
 }
 
-export const Home: FC<IHomeProps> = ({ setShowContactForm }) => {
+export const Home: FC<IHomeProps> = ({
+  setShowContactForm,
+  geolocationAllowed,
+  setGeolocationAllowed,
+}) => {
   const openModal = () => {
     setShowContactForm(true);
     document.body.classList.add("modal-open");
@@ -75,7 +81,10 @@ export const Home: FC<IHomeProps> = ({ setShowContactForm }) => {
           </div>
         </div>
         <div className="Home__hero__map">
-          <Map />
+          <Map
+            geolocationAllowed={geolocationAllowed}
+            setGeolocationAllowed={setGeolocationAllowed}
+          />
           <div className="Home__hero__map__decoration-1"></div>
           <div className="Home__hero__map__decoration-2"></div>
         </div>

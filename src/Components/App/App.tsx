@@ -10,9 +10,14 @@ import { Footer } from "../Footer/Footer";
 export const App: FC = () => {
   const [showContactForm, setShowContactForm] = useState<boolean>(false);
   const [categoryValue, setCategoryValue] = useState<string>("tow");
+  const [geolocationAllowed, setGeolocationAllowed] = useState<boolean>(false);
   return (
     <div className="App">
-      <Home setShowContactForm={setShowContactForm} />
+      <Home
+        setShowContactForm={setShowContactForm}
+        geolocationAllowed={geolocationAllowed}
+        setGeolocationAllowed={setGeolocationAllowed}
+      />
       <Services
         setShowContactForm={setShowContactForm}
         setCategoryValue={setCategoryValue}

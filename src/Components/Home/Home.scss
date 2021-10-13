@@ -169,6 +169,24 @@ $min-width: 1000px;
         }
       }
 
+      .allow-location {
+        position: absolute;
+        inset: 0;
+        display: grid;
+        place-content: center;
+        background: c.$white;
+        z-index: 3;
+
+        button {
+          display: flex;
+          gap: 1rem;
+          padding: 1rem 2rem;
+          background: c.$primary-blue;
+          color: c.$white;
+          border: 0;
+        }
+      }
+
       .map-loading {
         position: absolute;
         top: 50%;
