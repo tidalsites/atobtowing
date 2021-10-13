@@ -22,8 +22,8 @@ export const App: FC = () => {
         setShowContactForm={setShowContactForm}
         setCategoryValue={setCategoryValue}
       />
-      <Gallery />
       <Partners />
+      <Gallery />
       <ContactForm
         visible={showContactForm}
         toggle={setShowContactForm}
