@@ -1,0 +1,56 @@
+@use "../../Styles/Colors.scss" as c;
+
+.Help {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: c.$black;
+  color: c.$white;
+  text-align: center;
+  padding: 10px;
+  display: grid;
+  place-content: center;
+
+  &__wrapper {
+    max-width: 80em;
+    outline: 2px solid c.$white;
+    padding: 10px clamp(10px, 10vw, 100px);
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    margin: 1.5rem auto;
+    font-weight: 500;
+  }
+
+  &__list {
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-left: 1rem;
+
+      li {
+        text-align: left;
+      }
+    }
+  }
+
+  &__content {
+    margin: 1.5rem auto;
+    line-height: 1.5;
+  }
+
+  &__cta {
+    margin-bottom: 1rem;
+    a {
+      border: 2px solid c.$primary-red;
+      border: 0;
+      border-radius: 5px;
+      background: c.$primary-red;
+      color: c.$white;
+      font-size: 1rem;
+      padding: 0.5rem 1rem;
+    }
+  }
+}

@@ -33,18 +33,6 @@ $min-width: 1000px;
       min-height: 100vh;
     }
 
-    &__banner {
-      background: c.$primary-red;
-      width: 100%;
-      padding: 0.75rem 0;
-      color: c.$white;
-      text-align: center;
-      font-weight: 600;
-      box-shadow: 0 3px 6px c.$black;
-      border-bottom: 1px solid c.$black;
-      text-transform: uppercase;
-    }
-
     &__contactBar {
       display: flex;
       flex-wrap: wrap-reverse;
@@ -72,14 +60,16 @@ $min-width: 1000px;
           transition: all 0.2s ease-in-out;
           font-size: 1.125rem;
 
-          &:hover {
-            background: c.$white;
-            padding: 0.25rem 10px;
-            border-radius: 200px;
-            border: 1px solid c.$primary-blue;
+          @media (hover: hover) {
+            &:hover {
+              background: c.$white;
+              padding: 0.25rem 10px;
+              border-radius: 200px;
+              border: 1px solid c.$primary-blue;
 
-            > span {
-              display: block;
+              > span {
+                display: block;
+              }
             }
           }
 

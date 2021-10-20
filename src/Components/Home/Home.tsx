@@ -22,9 +22,6 @@ export const Home: FC<IHomeProps> = ({
   return (
     <div className="Home">
       <section className="Home__hero">
-        <span className="Home__hero__banner">
-          Norfolks Primary AAA Provider
-        </span>
         <div className="Home__hero__contactBar">
           <div className="Home__hero__contactBar__hours">
             <span>Open from 6AM to 12AM</span>

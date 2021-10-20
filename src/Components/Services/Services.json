@@ -4,7 +4,7 @@
       "name": "Towing & Recovery",
       "short_name": "Towing",
       "content": {
-        "text": "Vehicle Breakdowns, Accidents, Hauling",
+        "text": "The rollback wrecker is a type of trailer. Rollback and Wheel Lift Towing are usually used to move private motor vehicles and are equipped with flatbed trucks with guide rails.",
         "timeframe": "30-45min",
         "price": "Starting at $80"
       },
@@ -34,7 +34,7 @@
       "name": "Tire Repair or Install Spare Tire",
       "short_name": "Tire",
       "content": {
-        "text": "At your breakdown location",
+        "text": "If your tire blows out or blows out on the side of the road, you will be trapped until  Tire Change Service arrives. With the right tools and strength, you can pry open the broken tire, put on a donut, and drive to the tire repair shop. If you fail to do this, you will be trapped before help arrives.",
         "timeframe": "30-45min",
         "price": "Starting at $15"
       },
@@ -44,7 +44,7 @@
       "name": "Vehicle Unlock Services",
       "short_name": "Unlock",
       "content": {
-        "text": "Unlock services must have ID",
+        "text": "Locked out of the car? Maybe you are on the way to the cinema, or you are just going home. Either way, being locked out of the car is a hassle you never expected. Whether you have locked your keys in the car or just lost them, we will help you find your car and get back on the way. You immediately need an Unlock Service.",
         "timeframe": "1hr",
         "price": "$65"
       },
