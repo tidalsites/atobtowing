@@ -35,7 +35,7 @@ export const ContactForm: FC<IContactFormProps> = ({
 
   try {
     locationData = JSON.parse(
-      localStorage.getItem("atob-location-information") || ""
+      sessionStorage.getItem("atob-location-information") || ""
     );
   } catch (e) {
     locationData = null;

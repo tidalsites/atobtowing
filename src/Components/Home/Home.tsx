@@ -28,11 +28,11 @@ export const Home: FC<IHomeProps> = ({
           </div>
           <div className="Home__hero__contactBar__contact">
             <a
-              href="tel:757-123-4567"
+              href="tel:757-937-5210"
               className="Home__hero__contactBar__contact__item"
             >
               <i className="fas fa-phone"></i>
-              <span>(757) 123-4567</span>
+              <span>(757) 937-5210</span>
             </a>
             <a
               href="mailto:tidalsitestest@gmail.com"
@@ -69,7 +69,7 @@ export const Home: FC<IHomeProps> = ({
             </p>
           </div>
           <div className="Home__hero__content__btn-group">
-            <a href="tel:757-550-0830" className="btn primary">
+            <a href="tel:757-937-5210" className="btn primary">
               Call Now
             </a>
             <button onClick={openModal} className="btn secondary">

@@ -24,7 +24,7 @@ export const Map: FC<IMapProps> = ({
   useEffect(() => {
     if (geolocationAllowed && "geolocation" in navigator) {
       navigator.geolocation.getCurrentPosition((position) => {
-        localStorage.setItem(
+        sessionStorage.setItem(
           "atob-location-information",
           JSON.stringify({
             lat: position.coords.latitude,
@@ -71,8 +71,10 @@ export const Map: FC<IMapProps> = ({
         <div className="map-message">
           <span>We couldn't find your location</span>
           <span>
-            If you are outside of Norfolk, we recommend contacting a different
-            towing service provider, as our response times may be longer.
+            Please make sure you have network access and the location services
+            on your device are enabled. If you are still having issues, please
+            contact us via phone at{" "}
+            <a href="tel:757-937-5210">(757)-937-5210</a>.
           </span>
         </div>
       );
