@@ -46,7 +46,7 @@ export const Service: FC<IServiceProps> = ({
     default:
       break;
   }
-  const { text, timeframe, price } = content;
+  const { text } = content;
   return (
     <div className="Services__content__service Service">
       <div className="Services__content__service__icon">
