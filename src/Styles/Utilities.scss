@@ -19,7 +19,7 @@ a.btn {
   &.primary {
     background: c.$primary-red;
     color: c.$white;
-    border: $border-size solid c.$primary-red;
+    border: $border-size solid c.$white;
 
     &:hover {
       background: c.$white;

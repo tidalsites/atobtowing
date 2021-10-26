@@ -1,5 +1,9 @@
 import { FC } from "react";
 import "./Gallery.scss";
+import trucks1 from "../../Assets/trucks1.jpg";
+import trucks2 from "../../Assets/trucks2.jpg";
+import trucks3 from "../../Assets/trucks3.jpg";
+import trucks4 from "../../Assets/trucks4.jpg";
 
 export const Gallery: FC = () => {
   return (
@@ -8,12 +12,18 @@ export const Gallery: FC = () => {
         <h3>Gallery</h3>
       </div>
       <div className="Gallery__content">
-        <GalleryItem img="test" alt="test" />
-        <GalleryItem img="test" alt="test" />
-        <GalleryItem img="test" alt="test" />
-        <GalleryItem img="test" alt="test" />
-        <GalleryItem img="test" alt="test" />
-        <GalleryItem img="test" alt="test" />
+        <div className="GalleryItem">
+          <img src={trucks1} alt="Three tow trucks lined up" />
+        </div>
+        <div className="GalleryItem">
+          <img src={trucks2} alt="Three tow trucks lined up" />
+        </div>
+        <div className="GalleryItem">
+          <img src={trucks3} alt="Three tow trucks lined up" />
+        </div>
+        <div className="GalleryItem">
+          <img src={trucks4} alt="Three tow trucks lined up" />
+        </div>
       </div>
       <div className="Gallery__smedia">
         <h4>Check us out on Social Media</h4>
@@ -28,14 +38,6 @@ export const Gallery: FC = () => {
           </a>
         </div>
       </div>
-    </div>
-  );
-};
-
-const GalleryItem: FC<{ img: string; alt: string }> = ({ img, alt }) => {
-  return (
-    <div className="GalleryItem">
-      <img src={img} alt={alt} />
     </div>
   );
 };
