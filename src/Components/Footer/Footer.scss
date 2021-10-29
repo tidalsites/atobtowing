@@ -5,7 +5,15 @@
   background: c.$black;
   color: c.$white;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   padding: 5px 10px;
   font-size: 1.1rem;
+
+  div:nth-last-child(1) {
+    font-size: 0.75rem;
+    a {
+      color: c.$white;
+      text-decoration: underline;
+    }
+  }
 }
