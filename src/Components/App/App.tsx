@@ -3,7 +3,6 @@ import "./App.scss";
 import { Home } from "../Home/Home";
 import { Services } from "../Services/Services";
 import { Gallery } from "../Gallery/Gallery";
-import { Partners } from "../Partners/Partners";
 import { Help } from "../Help/Help";
 import { ContactForm } from "../ContactForm/ContactForm";
 import { Footer } from "../Footer/Footer";
@@ -29,7 +28,6 @@ export const App: FC = () => {
         setShowContactForm={setShowContactForm}
         setCategoryValue={setCategoryValue}
       />
-      <Partners />
       <Gallery />
       <Help />
       <ContactForm

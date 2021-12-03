@@ -1,44 +1,116 @@
 {
   "services": [
     {
-      "name": "Towing & Recovery",
+      "name": "Rollback and Wheel Lift Towing",
       "short_name": "Towing",
       "content": {
-        "text": "The rollback wrecker is a type of trailer. Rollback and Wheel Lift Towing are usually used to move private motor vehicles and are equipped with flatbed trucks with guide rails.",
+        "text": "The rollback wrecker is a type of trailer. Rollback and Wheel Lift Towing are usually used to move private motor vehicles and are equipped with flatbed trucks with guide rails. The vehicle to be transported can be driven onto the flatbed or pulled onto the flatbed with a winch. The rollback wrecker enables the vehicle to be transported entirely on the bed of the trailer. By removing the entire vehicle from the road, the tow truck driver and owner eliminate the possible damage to the vehicle being transported. AtoB Towing services have got your back if your vehicle needs such services! We have industry experts who have worked in this domain for years, and they know how to manage a vehicle!",
         "timeframe": "30-45min",
         "price": "Starting at $80"
       },
-      "icon": "tow"
+      "icon": "tow",
+      "elements": [
+        {
+          "type": "p",
+          "content": "The rollback wrecker is a type of trailer. Rollback and Wheel Lift Towing are usually used to move private motor vehicles and are equipped with flatbed trucks with guide rails. The vehicle to be transported can be driven onto the flatbed or pulled onto the flatbed with a winch."
+        },
+        {
+          "type": "p",
+          "content": "The rollback wrecker enables the vehicle to be transported entirely on the bed of the trailer. By removing the entire vehicle from the road, the tow truck driver and owner eliminate the possible damage to the vehicle being transported."
+        },
+        {
+          "type": "p",
+          "content": "AtoB Towing services have got your back if your vehicle needs such services! We have industry experts who have worked in this domain for years, and they know how to manage a vehicle!"
+        }
+      ]
     },
     {
-      "name": "Roadside Assistance",
-      "short_name": "Roadside",
+      "name": "Winch Outs",
+      "short_name": "Winch",
       "content": {
-        "text": "Fuel delivery at your breakdown location",
+        "text": "When other roadside assistance and vehicle rescue services are unsafe or fail, Winch outs may be required. Most towing services try to use traditional towing methods before twisting the vehicle out of a dangerous situation. Professional roadside rescuers have the skills, knowledge, and training to use winches to restore vehicles without damaging your vehicle or its bottom. In some cases, winches are safer and more accessible than traditional fishing or towing methods. When you need it, Winch outs are an excellent service and can unexpectedly reduce or prevent some breakdowns. When you need roadside assistance, why not call for the best? AtoB Towing provides comprehensive, professional roadside assistance. Whether you need a quick start, lock-in service or accident, or a trailer with a low loader, we can provide you with the best service.",
+        "timeframe": "30-45min",
+        "price": "Starting at $80"
+      },
+      "icon": "tow",
+      "elements": [
+        {
+          "type": "p",
+          "content": "When other roadside assistance and vehicle rescue services are unsafe or fail, Winch outs may be required. Most towing services try to use traditional towing methods before twisting the vehicle out of a dangerous situation."
+        },
+        {
+          "type": "p",
+          "content": "Professional roadside rescuers have the skills, knowledge, and training to use winches to restore vehicles without damaging your vehicle or its bottom. In some cases, winches are safer and more accessible than traditional fishing or towing methods."
+        },
+        {
+          "type": "p",
+          "content": "When you need it, Roadside Assistance is an excellent service and can unexpectedly reduce or prevent some breakdowns. When you need roadside assistance, why not call for the best?"
+        },
+        {
+          "type": "p",
+          "content": "AtoB Towing provides comprehensive, professional roadside assistance. Whether you need a quick start, lock-in service or accident, or a trailer with a low loader, we can provide you with the best service."
+        }
+      ]
+    },
+    {
+      "name": "Jumpstart Service",
+      "short_name": "Jumpstart",
+      "content": {
+        "text": "As the name suggests, Jumpstart Service will be responsible for starting your vehicle if you have a vehicle, but this is only part of it. In addition to start-up assistance, the service includes: Tire maintenance. An inspection of critical functions. Filling of engine oil and lubricating oil. Users can choose the vehicle, location, leading service, and any additional services they need. You can select a period and confirm the payment or pay later according to your needs. Technicians are entrusted to perform work, and after the completion of the service process, they will issue a start-up report to the corresponding customer. Customers can also ask technicians to perform any additional services by adding them to existing packages on site. At AtoB, we never fail to meet our client’s expectations and always render top-notch services.",
         "timeframe": "30-45min",
         "price": "Deliver $5 of gas"
       },
-      "icon": "roadside"
-    },
-    {
-      "name": "Vehicle Battery Sales & Install",
-      "short_name": "Battery",
-      "content": {
-        "text": "We sell Top Quality Batteries. Delivered & Installed",
-        "timeframe": "1 hr",
-        "price": "Call for Pricing"
-      },
-      "icon": "battery"
+      "icon": "roadside",
+      "elements": [
+        {
+          "type": "p",
+          "content": "As the name suggests, Jumpstart Service will be responsible for starting your vehicle if you have a vehicle, but this is only part of it. In addition to start-up assistance, the service includes:"
+        },
+        {
+          "type": "ul",
+          "contentArray": [
+            "Tire maintenance.",
+            "An inspection of critical functions.",
+            "Filling of engine oil and lubricating oil."
+          ]
+        },
+        {
+          "type": "p",
+          "content": "Users can choose the vehicle, location, leading service, and any additional services they need. You can select a period and confirm the payment or pay later according to your needs."
+        },
+        {
+          "type": "p",
+          "content": "Technicians are entrusted to perform work, and after the completion of the service process, they will issue a start-up report to the corresponding customer. Customers can also ask technicians to perform any additional services by adding them to existing packages on site."
+        },
+        {
+          "type": "p",
+          "content": "At AtoB Towing, we never fail to meet our client’s expectations and always render top-notch services. "
+        }
+      ]
     },
     {
       "name": "Tire Repair or Install Spare Tire",
       "short_name": "Tire",
       "content": {
-        "text": "If your tire blows out or blows out on the side of the road, you will be trapped until  Tire Change Service arrives. With the right tools and strength, you can pry open the broken tire, put on a donut, and drive to the tire repair shop. If you fail to do this, you will be trapped before help arrives.",
+        "text": "If your tire blows out or blows out on the side of the road, you will be trapped until Tire Change Service arrives. With the right tools and strength, you can pry open the broken tire, put on a donut, and drive to the tire repair shop. If you fail to do this, you will be trapped before help arrives.",
         "timeframe": "30-45min",
         "price": "Starting at $15"
       },
-      "icon": "tire"
+      "icon": "tire",
+      "elements": [
+        {
+          "type": "p",
+          "content": "If your tire blows out or blows out on the side of the road, you will be trapped until  Tire Change Service arrives. With the right tools and strength, you can pry open the broken tire, put on a donut, and drive to the tire repair shop. If you fail to do this, you will be trapped before help arrives."
+        },
+        {
+          "type": "p",
+          "content": "Even so, you may end up paying unreasonable roadside assistance costs. Finally, an alternative that can provide you with on-demand help without high prices: Alyson Towing and recovery."
+        },
+        {
+          "type": "p",
+          "content": "There are many options for changing tires on the roadside. Still, we believe that Alyson Towing and recovery is a better choice for families, students, professionals, and anyone who values ​​time or personal safety."
+        }
+      ]
     },
     {
       "name": "Vehicle Unlock Services",
@@ -48,7 +120,21 @@
         "timeframe": "1hr",
         "price": "$65"
       },
-      "icon": "unlock"
+      "icon": "unlock",
+      "elements": [
+        {
+          "type": "p",
+          "content": "Locked out of the car? Maybe you are on the way to the cinema, or you are just going home. Either way, being locked out of the car is a hassle you never expected. Whether you have locked your keys in the car or just lost them, we will help you find your car and get back on the way. You immediately need an Unlock Service. "
+        },
+        {
+          "type": "p",
+          "content": "Car shutdowns happen to our best people and are always at the worst. Modern high-tech keys like proximity keys are very convenient and safer than traditional keys. Nevertheless, they are easy to lose, and when you return to the car dealer, the cost of replacing them is very high."
+        },
+        {
+          "type": "p",
+          "content": "AtoB Towing has the tools to cut new keys for you on-site, regardless of their type. With a more modern system, we can also ensure that only your new key fits your vehicle if your old key falls into the wrong hands."
+        }
+      ]
     }
   ]
 }

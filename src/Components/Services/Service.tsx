@@ -1,4 +1,4 @@
-import { FC, Dispatch, SetStateAction } from "react";
+import { FC, Dispatch, SetStateAction, useState } from "react";
 import tow from "../../Assets/tow-icon.png";
 import tire from "../../Assets/tire-icon.png";
 import battery from "../../Assets/battery-icon.png";
@@ -11,11 +11,18 @@ interface IServiceContent {
   price: string;
 }
 
+interface IContentElement {
+  type: string;
+  content?: string;
+  contentArray?: string[];
+}
+
 interface IServiceProps {
   name: string;
   short_name: string;
   content: IServiceContent;
   icon: string;
+  elements: IContentElement[];
   setShowContactForm: Dispatch<SetStateAction<boolean>>;
   setCategoryValue: Dispatch<SetStateAction<string>>;
   key: string;
@@ -26,9 +33,12 @@ export const Service: FC<IServiceProps> = ({
   short_name,
   content,
   icon,
+  elements,
   setShowContactForm,
   setCategoryValue,
 }) => {
+  const [showContent, setShowContent] = useState<boolean>(false);
+
   let IconComponent: FC = TowIcon;
   switch (icon) {
     case "tire":
@@ -46,7 +56,6 @@ export const Service: FC<IServiceProps> = ({
     default:
       break;
   }
-  const { text } = content;
   return (
     <div className="Services__content__service Service">
       <div className="Services__content__service__icon">
@@ -54,13 +63,36 @@ export const Service: FC<IServiceProps> = ({
       </div>
       <div className="Services__content__service__name">{name}</div>
       <div className="Services__content__service__content">
-        <p className="Services__content__service__content__text">{text}</p>
-        {/* <p className="Services__content__service__content__timeframe">
-          Est. timframe: {timeframe}
-        </p>
-        <p className="Services__content__service__content__price">
-          Price: {price}
-        </p> */}
+        <div
+          className={`Services__content__service__content__text ${
+            showContent ? "content_show" : "content_hide"
+          }`}
+        >
+          {(() => {
+            let serviceContent = elements.map((element) => {
+              if (element.type === "ul") {
+                return (
+                  <ul>
+                    {element.contentArray!.map((text) => {
+                      return <li>{text}</li>;
+                    })}
+                  </ul>
+                );
+              }
+
+              return <p>{element.content}</p>;
+            });
+            serviceContent.push(
+              <button
+                className="more_button"
+                onClick={() => setShowContent(!showContent)}
+              >
+                {`...${showContent ? "Read Less" : "Read More"}`}
+              </button>
+            );
+            return serviceContent;
+          })()}
+        </div>
         <button
           onClick={() => {
             setCategoryValue(icon);
