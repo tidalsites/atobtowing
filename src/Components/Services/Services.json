@@ -8,7 +8,7 @@
         "timeframe": "30-45min",
         "price": "Starting at $80"
       },
-      "icon": "tow",
+      "icon": "wrecker",
       "elements": [
         {
           "type": "p",
@@ -60,7 +60,7 @@
         "timeframe": "30-45min",
         "price": "Deliver $5 of gas"
       },
-      "icon": "roadside",
+      "icon": "jumpstart",
       "elements": [
         {
           "type": "p",

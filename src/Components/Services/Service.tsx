@@ -4,6 +4,8 @@ import tire from "../../Assets/tire-icon.png";
 import battery from "../../Assets/battery-icon.png";
 import gas from "../../Assets/gas-icon.png";
 import unlock from "../../Assets/unlock-icon.png";
+import wrecker from "../../Assets/wrecker-icon.png";
+import jumpstart from "../../Assets/jumpstart-icon.png";
 
 interface IServiceContent {
   text: string;
@@ -52,6 +54,12 @@ export const Service: FC<IServiceProps> = ({
       break;
     case "unlock":
       IconComponent = UnlockIcon;
+      break;
+    case "wrecker":
+      IconComponent = WreckerIcon;
+      break;
+    case "jumpstart":
+      IconComponent = JumpstartIcon;
       break;
     default:
       break;
@@ -124,4 +132,12 @@ const GasIcon: FC = () => {
 
 const UnlockIcon: FC = () => {
   return <img src={unlock} alt="Car with an unlocked padlock" />;
+};
+
+const WreckerIcon: FC = () => {
+  return <img src={wrecker} alt="Tow truck with car mounted on back" />;
+};
+
+const JumpstartIcon: FC = () => {
+  return <img src={jumpstart} alt="Jumpstart cables" />;
 };
