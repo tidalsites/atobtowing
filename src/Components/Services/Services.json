@@ -60,7 +60,7 @@
         "timeframe": "30-45min",
         "price": "Deliver $5 of gas"
       },
-      "icon": "jumpstart",
+      "icon": "battery",
       "elements": [
         {
           "type": "p",
