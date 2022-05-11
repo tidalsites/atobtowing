@@ -1,9 +1,13 @@
 import { FC } from "react";
 import "./Gallery.scss";
-import trucks1 from "../../Assets/trucks1.jpg";
-import trucks2 from "../../Assets/trucks2.jpg";
-import trucks3 from "../../Assets/trucks3.jpg";
-import trucks4 from "../../Assets/trucks4.jpg";
+// import trucks1 from "../../Assets/trucks1.jpg";
+// import trucks2 from "../../Assets/trucks2.jpg";
+// import trucks3 from "../../Assets/trucks3.jpg";
+// import trucks4 from "../../Assets/trucks4.jpg";
+import trucks1 from "../../Assets/gallery-img1.png";
+import trucks2 from "../../Assets/gallery-img2.jpg";
+import trucks3 from "../../Assets/gallery-img3.jpg";
+import trucks4 from "../../Assets/gallery-img4.jpg";
 
 export const Gallery: FC = () => {
   return (
@@ -12,17 +16,17 @@ export const Gallery: FC = () => {
         <h3>Gallery</h3>
       </div>
       <div className="Gallery__content">
-        <div className="GalleryItem">
-          <img src={trucks1} alt="Three tow trucks lined up" />
+        <div className="GalleryItem img-landscape">
+          <img src={trucks1} alt="Alysons Roadside Tow Truck" />
+        </div>
+        <div className="GalleryItem img-landscape">
+          <img src={trucks2} alt="Alysons Roadside Tow Truck" />
         </div>
         <div className="GalleryItem">
-          <img src={trucks2} alt="Three tow trucks lined up" />
+          <img src={trucks3} alt="Alysons Roadside Tow Truck" />
         </div>
         <div className="GalleryItem">
-          <img src={trucks3} alt="Three tow trucks lined up" />
-        </div>
-        <div className="GalleryItem">
-          <img src={trucks4} alt="Three tow trucks lined up" />
+          <img src={trucks4} alt="Alysons Roadside Tow Truck" />
         </div>
       </div>
       <div className="Gallery__smedia">

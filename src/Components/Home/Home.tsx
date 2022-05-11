@@ -28,18 +28,18 @@ export const Home: FC<IHomeProps> = ({
           </div>
           <div className="Home__hero__contactBar__contact">
             <a
-              href="tel:757-937-5210"
+              href="tel:7572743838"
               className="Home__hero__contactBar__contact__item"
             >
               <i className="fas fa-phone"></i>
-              <span>(757) 937-5210</span>
+              <span>(757) 274-3838</span>
             </a>
             <a
               href="mailto:tidalsitestest@gmail.com"
               className="Home__hero__contactBar__contact__item"
             >
               <i className="fas fa-envelope"></i>
-              <span>scott@atobtowing.com</span>
+              <span>Alysonsroadside@gmail.com</span>
             </a>
             <a
               href="https://www.facebook.com/atobroadsideassistance/"
@@ -62,14 +62,13 @@ export const Home: FC<IHomeProps> = ({
             <img src={logo} alt="AtoB Roadside Assistance" />
             <h2>Let us get you back on track</h2>
             <p>
-              A to B Roadside Assistance has been leading the way in Towing
-              services in Norfolk since 2010. We offer at-breakdown services as
-              well as at-home services to make sure you can get to where you
-              need to go.
+              Alysons Roadside has been leading the way in Towing services in
+              Norfolk since 2010. We offer at-breakdown services as well as
+              at-home services to make sure you can get to where you need to go.
             </p>
           </div>
           <div className="Home__hero__content__btn-group">
-            <a href="tel:757-937-5210" className="btn primary">
+            <a href="tel:7572743838" className="btn primary">
               Call Now
             </a>
             <button onClick={openModal} className="btn secondary">
