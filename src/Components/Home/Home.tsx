@@ -1,7 +1,7 @@
 import { FC, Dispatch, SetStateAction } from "react";
 import "./Home.scss";
 import { Map } from "./Map";
-import logo from "../../Assets/logo.jpeg";
+import logo from "../../Assets/logo.png";
 
 interface IHomeProps {
   setShowContactForm: Dispatch<SetStateAction<boolean>>;
@@ -63,7 +63,7 @@ export const Home: FC<IHomeProps> = ({
             <h2>Let us get you back on track</h2>
             <p>
               Alysons Roadside has been leading the way in Towing services in
-              Norfolk since 2010. We offer at-breakdown services as well as
+              Norfolk since 2019. We offer at-breakdown services as well as
               at-home services to make sure you can get to where you need to go.
             </p>
           </div>
