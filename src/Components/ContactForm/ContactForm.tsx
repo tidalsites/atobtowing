@@ -29,6 +29,7 @@ export const ContactForm: FC<IContactFormProps> = ({
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
   const [failureMessage, setFailureMessage] = useState<string | null>(null);
   const [messageSending, setMessageSending] = useState<boolean>(false);
+
   let defaultLocationUrl: string;
 
   let locationData: { lat: number; lng: number } | null;
@@ -40,6 +41,14 @@ export const ContactForm: FC<IContactFormProps> = ({
   } catch (e) {
     locationData = null;
   }
+
+  const [locationToggle, setLocationToggle] = useState<boolean>(
+    locationData !== null
+  );
+
+  const toggleLocation = () => {
+    setLocationToggle(!locationToggle);
+  };
 
   if (!locationData) {
     defaultLocationUrl = "No location information";
@@ -111,72 +120,90 @@ export const ContactForm: FC<IContactFormProps> = ({
             <i className="fas fa-spinner fa-spin"></i>
           </div>
         ) : (
-          <form className="ContactForm__wrapper__form" onSubmit={handleSubmit}>
-            <div className="ContactForm__wrapper__form__group">
-              <label htmlFor="firstName">First Name</label>
-              <input
-                onChange={(e) => setFirstName(e.target.value)}
-                name="firstName"
-                type="text"
-                id="firstName"
-              />
-              <span className="form-error"></span>
+          <>
+            <div className="ContactForm__wrapper__location">
+              <div>
+                <span>Location Services:</span>
+              </div>
+              <div onClick={toggleLocation} className="toggle-btn">
+                <div
+                  className={`toggle-btn__checkbox-dup ${
+                    locationToggle ? "toggle-btn__checkbox-dup--active" : ""
+                  }`}
+                ></div>
+                <input type="checkbox" name="" id="" checked={locationToggle} />
+              </div>
             </div>
-            <div className="ContactForm__wrapper__form__group">
-              <label htmlFor="lastName">Last Name</label>
-              <input
-                onChange={(e) => setLastName(e.target.value)}
-                name="lastName"
-                type="text"
-              />
-              <span className="form-error"></span>
-            </div>
-            <div className="ContactForm__wrapper__form__group">
-              <label htmlFor="email">Email</label>
-              <input
-                onChange={(e) => setEmail(e.target.value)}
-                name="email"
-                type="email"
-              />
-              <span className="form-error"></span>
-            </div>
-            <div className="ContactForm__wrapper__form__group">
-              <label htmlFor="phone">Phone</label>
-              <input
-                onChange={(e) => setPhone(e.target.value)}
-                name="phone"
-                type="text"
-              />
-              <span className="form-error"></span>
-            </div>
-            <div className="ContactForm__wrapper__form__group">
-              <label htmlFor="category">Issue Category</label>
-              <select
-                onChange={(e) => setCategory(e.target.value)}
-                name="category"
-                value={categoryValue}
-              >
-                <option value="tow">Towing & Recovery</option>
-                <option value="roadside">Roadside Assistance</option>
-                <option value="battery">Battery</option>
-                <option value="tire">Tire</option>
-                <option value="unlock">Vehicle Unlock</option>
-                <option value="other">Other</option>
-              </select>
-              <span className="form-error"></span>
-            </div>
-            <div className="ContactForm__wrapper__form__group">
-              <label htmlFor="description">Description of problem</label>
-              <textarea
-                onChange={(e) => setDescription(e.target.value)}
-                name="description"
-                cols={30}
-                rows={10}
-              ></textarea>
-              <span className="form-error"></span>
-            </div>
-            <button type="submit">Send</button>
-          </form>
+            <form
+              className="ContactForm__wrapper__form"
+              onSubmit={handleSubmit}
+            >
+              <div className="ContactForm__wrapper__form__group">
+                <label htmlFor="firstName">First Name</label>
+                <input
+                  onChange={(e) => setFirstName(e.target.value)}
+                  name="firstName"
+                  type="text"
+                  id="firstName"
+                />
+                <span className="form-error"></span>
+              </div>
+              <div className="ContactForm__wrapper__form__group">
+                <label htmlFor="lastName">Last Name</label>
+                <input
+                  onChange={(e) => setLastName(e.target.value)}
+                  name="lastName"
+                  type="text"
+                />
+                <span className="form-error"></span>
+              </div>
+              <div className="ContactForm__wrapper__form__group">
+                <label htmlFor="email">Email</label>
+                <input
+                  onChange={(e) => setEmail(e.target.value)}
+                  name="email"
+                  type="email"
+                />
+                <span className="form-error"></span>
+              </div>
+              <div className="ContactForm__wrapper__form__group">
+                <label htmlFor="phone">Phone</label>
+                <input
+                  onChange={(e) => setPhone(e.target.value)}
+                  name="phone"
+                  type="text"
+                />
+                <span className="form-error"></span>
+              </div>
+              <div className="ContactForm__wrapper__form__group">
+                <label htmlFor="category">Issue Category</label>
+                <select
+                  onChange={(e) => setCategory(e.target.value)}
+                  name="category"
+                  value={categoryValue}
+                >
+                  <option value="tow">Towing & Recovery</option>
+                  <option value="roadside">Roadside Assistance</option>
+                  <option value="battery">Battery</option>
+                  <option value="tire">Tire</option>
+                  <option value="unlock">Vehicle Unlock</option>
+                  <option value="other">Other</option>
+                </select>
+                <span className="form-error"></span>
+              </div>
+              <div className="ContactForm__wrapper__form__group">
+                <label htmlFor="description">Description of problem</label>
+                <textarea
+                  onChange={(e) => setDescription(e.target.value)}
+                  name="description"
+                  cols={30}
+                  rows={10}
+                ></textarea>
+                <span className="form-error"></span>
+              </div>
+              <button type="submit">Send</button>
+            </form>
+          </>
         )}
       </div>
       {successMessage && (
