@@ -82,8 +82,9 @@ $gallery-max-width: 60em;
   outline-offset: -5px;
 
   img {
-    max-width: 350px;
+    max-width: min(350px, calc(100vw - 2rem));
     object-fit: cover;
     height: 100%;
+    max-height: 350px;
   }
 }

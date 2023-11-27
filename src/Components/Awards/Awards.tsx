@@ -10,7 +10,7 @@ export const Awards = () => {
       <div className="Awards__wrapper">
         <h2 className="Awards__header">Awards</h2>
         <div>
-          <p className="Awards__name">2023 ACE Award Winner</p>
+          <p className="Awards__name">2022 & 2023 ACE Award Winner</p>
           <p className="Awards__sponsored-by">Selected for:</p>
           <ul className="Awards__criteria">
             <li>
