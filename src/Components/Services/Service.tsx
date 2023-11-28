@@ -1,11 +1,5 @@
 import { FC, Dispatch, SetStateAction } from "react";
 
-interface IServiceContent {
-  text: string;
-  timeframe: string;
-  price: string;
-}
-
 interface IContentElement {
   type: string;
   content?: string;
