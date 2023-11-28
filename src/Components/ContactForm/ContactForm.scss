@@ -48,6 +48,44 @@
       }
     }
 
+    &__location {
+      display: flex;
+      gap: 0.75rem;
+      padding: 1rem 10px;
+
+      .toggle-btn {
+        position: relative;
+        display: grid;
+        place-content: center;
+        min-width: 50px;
+        background: c.$black;
+        cursor: pointer;
+        border-radius: 200px;
+        border: 1px solid c.$white;
+        box-shadow: inset 1px 1px 2px #999;
+
+        &__checkbox-dup {
+          position: absolute;
+          border-radius: inherit;
+          width: 55%;
+          height: 100%;
+          background: c.$primary-blue;
+          box-shadow: inset 1px 1px 2px #33cdfd;
+          transition: right 150ms ease-in;
+          right: 45%;
+        }
+
+        &__checkbox-dup--active {
+          right: 0;
+        }
+
+        input[type="checkbox"] {
+          width: 0;
+          height: 0;
+        }
+      }
+    }
+
     &__form {
       display: flex;
       flex-direction: column;

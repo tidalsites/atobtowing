@@ -32,35 +32,33 @@ export const Home: FC<IHomeProps> = ({
               className="Home__hero__contactBar__contact__item"
             >
               <i className="fas fa-phone"></i>
-              <span>(757) 274-3838</span>
             </a>
             <a
               href="mailto:tidalsitestest@gmail.com"
               className="Home__hero__contactBar__contact__item"
             >
               <i className="fas fa-envelope"></i>
-              <span>Alysonsroadside@gmail.com</span>
             </a>
             <a
               href="https://www.facebook.com/atobroadsideassistance/"
               className="Home__hero__contactBar__contact__item"
             >
               <i className="fab fa-facebook"></i>
-              <span>Facebook</span>
             </a>
             <a
               href="https://www.instagram.com/"
               className="Home__hero__contactBar__contact__item"
             >
               <i className="fab fa-instagram"></i>
-              <span>Instagram</span>
             </a>
           </div>
         </div>
         <div className="Home__hero__content">
           <div className="Home__hero__content__type">
             <img src={logo} alt="AtoB Roadside Assistance" />
-            <h2>Let us get you back on track</h2>
+            <p className="Home__hero__content__type__subheader">
+              Let us get you back on track
+            </p>
             <p>
               Alysons Roadside has been leading the way in Towing services in
               Norfolk since 2019. We offer at-breakdown services as well as
@@ -77,10 +75,19 @@ export const Home: FC<IHomeProps> = ({
           </div>
         </div>
         <div className="Home__hero__map">
-          <Map
-            geolocationAllowed={geolocationAllowed}
-            setGeolocationAllowed={setGeolocationAllowed}
-          />
+          <>
+            <Map
+              geolocationAllowed={geolocationAllowed}
+              setGeolocationAllowed={setGeolocationAllowed}
+            />
+            {geolocationAllowed ? (
+              <button onClick={openModal} className="Home__hero__map__cta">
+                Request Service
+              </button>
+            ) : (
+              ""
+            )}
+          </>
         </div>
       </section>
     </div>
