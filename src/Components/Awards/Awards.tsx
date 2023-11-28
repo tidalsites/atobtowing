@@ -1,7 +1,7 @@
 import "./Awards.scss";
 import allstate from "../../Assets/allstate.svg";
-import geico from "../../Assets/geico.svg";
-import agero from "../../Assets/agero.svg";
+import geico from "../../Assets/geico.png";
+import agero from "../../Assets/agero.png";
 import nsd from "../../Assets/nsd+questx.png";
 
 export const Awards = () => {
