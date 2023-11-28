@@ -6,6 +6,7 @@ import { Gallery } from "../Gallery/Gallery";
 import { Help } from "../Help/Help";
 import { ContactForm } from "../ContactForm/ContactForm";
 import { Footer } from "../Footer/Footer";
+import { Awards } from "../Awards/Awards";
 
 export const App: FC = () => {
   const [showContactForm, setShowContactForm] = useState<boolean>(false);
@@ -24,10 +25,8 @@ export const App: FC = () => {
         geolocationAllowed={geolocationAllowed}
         setGeolocationAllowed={setGeolocationAllowed}
       />
-      <Services
-        setShowContactForm={setShowContactForm}
-        setCategoryValue={setCategoryValue}
-      />
+      <Services setShowContactForm={setShowContactForm} />
+      <Awards />
       <Gallery />
       <Help />
       <ContactForm

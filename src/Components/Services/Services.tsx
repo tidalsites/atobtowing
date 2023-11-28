@@ -25,29 +25,22 @@ interface IService {
 
 interface IServicesProps {
   setShowContactForm: Dispatch<SetStateAction<boolean>>;
-  setCategoryValue: Dispatch<SetStateAction<string>>;
 }
 
-export const Services: FC<IServicesProps> = ({
-  setShowContactForm,
-  setCategoryValue,
-}) => {
+export const Services: FC<IServicesProps> = ({ setShowContactForm }) => {
   const services: IService[] = ServiceData.services;
   return (
     <section className="Services">
-      <h3 className="Services__header">Services</h3>
+      <h2 className="Services__header">Services</h2>
       <div className="Services__content">
         {services.map((service, index) => {
-          let { name, short_name, content, icon, elements } = service;
+          let { name, short_name, elements } = service;
           return (
             <Service
               name={name}
               short_name={short_name}
-              content={content}
-              icon={icon}
               elements={elements}
               setShowContactForm={setShowContactForm}
-              setCategoryValue={setCategoryValue}
               key={`service_${index}`}
             />
           );

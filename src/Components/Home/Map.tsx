@@ -74,7 +74,7 @@ export const Map: FC<IMapProps> = ({
             Please make sure you have network access and the location services
             on your device are enabled. If you are still having issues, please
             contact us via phone at{" "}
-            <a href="tel:757-937-5210">(757)-937-5210</a>.
+            <a href="tel:757-274-3838">(757) 274-3838</a>.
           </span>
         </div>
       );

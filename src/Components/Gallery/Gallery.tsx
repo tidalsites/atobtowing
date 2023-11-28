@@ -8,23 +8,36 @@ import trucks1 from "../../Assets/gallery-img1.png";
 import trucks2 from "../../Assets/gallery-img2.jpg";
 import trucks3 from "../../Assets/gallery-img3.jpg";
 import trucks4 from "../../Assets/gallery-img4.jpg";
+import trucks5 from "../../Assets/gallery-img5.png";
+import trucks6 from "../../Assets/gallery-img6.jpg";
+import trucks7 from "../../Assets/gallery-img7.jpg";
 
 export const Gallery: FC = () => {
   return (
     <div className="Gallery">
       <div className="Gallery__header">
-        <h3>Gallery</h3>
+        <h2>Gallery</h2>
       </div>
       <div className="Gallery__content">
+        <div className="GalleryItem">
+          <img src={trucks5} alt="Alysons Roadside Tow Truck" />
+        </div>
+        <div className="GalleryItem">
+          <img src={trucks6} alt="Alysons Roadside Tow Truck" />
+        </div>
+        <div className="GalleryItem">
+          <img src={trucks7} alt="Alysons Roadside Tow Truck" />
+        </div>
+        <div className="GalleryItem">
+          <img src={trucks3} alt="Alysons Roadside Tow Truck" />
+        </div>
         <div className="GalleryItem img-landscape">
           <img src={trucks1} alt="Alysons Roadside Tow Truck" />
         </div>
         <div className="GalleryItem img-landscape">
           <img src={trucks2} alt="Alysons Roadside Tow Truck" />
         </div>
-        <div className="GalleryItem">
-          <img src={trucks3} alt="Alysons Roadside Tow Truck" />
-        </div>
+
         <div className="GalleryItem">
           <img src={trucks4} alt="Alysons Roadside Tow Truck" />
         </div>
